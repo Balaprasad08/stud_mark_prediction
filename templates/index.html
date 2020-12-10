@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Mark Prediction</title>
+    <style>
+        #navbar::before {
+            content: "";
+            background: url('{{ url_for('static',filename='/43.jpg')}}') no-repeat center center/cover;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+        .container{
+      border: 2px solid black;
+      margin: 0px 8px;
+      padding: 29px 93px;
+      width: 40%;
+      height: 30%;
+      display: block;
+      border-radius: 40px;
+      position: absolute;
+      left: 20px;
+    }
+    .form-group input{
+      text-align: center;
+      display: block;
+      width: 40%;
+      padding: 10px;
+      border: 2px solid black;
+      margin: 8px auto;
+      border-radius: 40px;
+      font-size: 30px;
+      font-weight: bold;
+
+    }    .btn{
+      margin: 30px 70px;
+      padding: 10px 5px;
+      width: 22%;
+      color:white;
+      font-size: 20px;
+      border-radius: 20px;
+      background-color: black;
+      border: 2px solid white;
+    }
+    .rslt{
+      margin: -36px 271px;
+      padding: 12px 21px;
+      width: 20%;
+      color:white;
+      font-size: 20px;
+      background-color: black;
+      text-align: center;
+    }
+    .btn:hover{
+      text-decoration: underline;
+      background-color: #ffcf40;
+      color: blue;
+      cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div>
+            <h1>Students Marks Prediction</h1>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="predict" method="POST">
+          <div class="form-group">
+            <input type="text" name="study_hours" placeholder="Study Hours" required="required"/>
+          </div>
+          <button class="btn">Predict</button>
+          <div class="rslt">{{result}}%</div>
+        </form>
+      </div>
+
+</body>
+
+</html>
