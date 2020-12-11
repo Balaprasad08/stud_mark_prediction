@@ -3,7 +3,7 @@ import pandas as pd
 import flask
 from flask import Flask,render_template,request
 import pickle
-model=pickle.load(open('stu_mark.pickle',"rb"))
+model=pickle.load(open('Stu_mark.pickle',"rb"))
 
 app=Flask(__name__)
 @app.route("/")
